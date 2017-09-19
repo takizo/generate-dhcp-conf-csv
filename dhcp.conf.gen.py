@@ -7,6 +7,7 @@ with open("machine.csv") as f:
         array.append(line)
 
     for etc in array:
+        etc = etc.rstrip('\r\n')
         x =  etc.split(',')
         hosta = """host %s-ipmi {\n\thardware ethernet %s;\n\tfixed-address %s;\n}
 host %s-1GA {\n\thardware ethernet %s;\n\tfixed-address %s;\n}
